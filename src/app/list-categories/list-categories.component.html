@@ -1,0 +1,37 @@
+<!--
+<input type="text" [(ngModel)]='property' class="form-control">
+<p>your name is {{property}}</p>-->
+<h2>Search any Product</h2>
+<input [(ngModel)]="titre" type="text" class="form-control" placeholder="Rechercher un produit">
+<br>
+<h2>Categories</h2>
+<div class="container">
+    <div class="row">
+      <div *ngFor="let x of categories | contains:titre" class="col-md-4" style="margin-bottom: 20px;">
+        <app-card [image]="x.image" [title]="x.title" [id] = "x.id" [description] = "x.description" [available] = "x.available" (notified)="f($event)" (added)="addToShortList(x)" ></app-card>
+      </div>
+  </div>
+  <h2>Products</h2>
+  <app-list-products></app-list-products>
+</div>
+<router-outlet></router-outlet>
+
+
+
+<!--     
+        <!--<ng-container *ngIf="x.title.toLowerCase().includes(titre.toLowerCase())">-->
+        
+
+    <!--    <img (click)="clickImage(x.description)" [src]="x.image" [alt]="x.title" class="img-fluid h-50 w-75">
+        <h3 appHighlight >{{x.title | uppercase}}</h3>
+        <button [routerLink]="['/details',x.id]" class="btn btn-primary"  *ngIf="x.available">Voir produits</button>
+        <button [routerLink]="['/details']" [queryParams]="{id:x.id}"  class="btn btn-primary" *ngIf="x.available">Voir produits</button>
+        <a routerLink="getdetails">Details</a>
+        <span [hidden]="x.available">Catégorie non disponible</span>
+        <!--<button  class="btn btn-primary" [hidden]="!x.available">Voir produits</button>-->
+        <!--</ng-container>-->
+     <!--  -->
+   
+      
+    
+ 

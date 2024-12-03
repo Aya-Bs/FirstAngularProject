@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.highlight {
+    background-color: rgb(251, 213, 149);
+    padding: 10px;
+    border: 1px solid rgb(114, 61, 18);
+  }

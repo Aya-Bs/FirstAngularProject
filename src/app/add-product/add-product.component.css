@@ -1,0 +1,42 @@
+/* form-styles.css */
+
+.form-container {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+  
+  .form-group {
+    margin-bottom: 0.75rem; /* Reduced margin for closer spacing */
+  }
+  
+  .form-label {
+    font-weight: bold;
+    font-size: 0.9rem; /* Smaller label font */
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-control,
+  textarea {
+    padding: 0.3rem 0.5rem; /* Reduced padding for compact input */
+    font-size: 0.9rem;
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  .error-text {
+    color: #d9534f; /* Danger color for errors */
+    margin-top: 0.25rem;
+    display: block;
+    font-size: 0.8rem; /* Smaller font for error messages */
+  }
+  
+  .submit-button {
+    margin-top: 1rem;
+    padding: 0.4rem 0.75rem; /* Compact button padding */
+    font-size: 0.9rem;
+  }
+  

@@ -1,0 +1,37 @@
+/* form-styles.css */
+
+.form-container {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+  
+  .form-group {
+    margin-bottom: 0.75rem; /* Reduced bottom margin to make spacing smaller */
+  }
+  
+  .form-label {
+    font-weight: bold;
+    font-size: 0.9rem; /* Slightly smaller label font */
+  }
+  
+  .form-control {
+    padding: 0.3rem 0.5rem; /* Reduced padding for a more compact input */
+    font-size: 0.9rem; /* Slightly smaller input font */
+  }
+  
+  .error-text {
+    color: #d9534f; /* Bootstrap's "danger" color */
+    margin-top: 0.25rem;
+    display: block;
+    font-size: 0.8rem; /* Reduced font size for error messages */
+  }
+  
+  .submit-button {
+    margin-top: 1rem; /* Reduced top margin for button */
+    padding: 0.4rem 0.75rem; /* Smaller button padding */
+    font-size: 0.9rem; /* Slightly smaller button font */
+  }
+  

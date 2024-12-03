@@ -1,0 +1,48 @@
+<form ngForm #f="ngForm" class="form-container">
+  <div class="form-group">
+    <label for="name" class="form-label">Name</label>
+    <input required minlength="5" pattern="[a-zA-Z]*" name="n" [(ngModel)]="p.name" #n="ngModel" class="form-control" />
+    <div *ngIf="n.invalid" class="error-text">
+      <div *ngIf="n.errors['required']">Champs obligatoire</div>
+      <div *ngIf="n.errors['minlength']">
+        Min {{ n.errors['minlength']['requiredLength'] }} caractères
+        alors que vous avez saisi {{ n.errors['minlength']['actualLength'] }}
+      </div>
+      <div *ngIf="n.errors['pattern']">Nom doit contenir que des lettres</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price" class="form-label">Price</label>
+    <input pattern="^\d+(\.\d+)?$" name="price" [(ngModel)]="p.price" #price="ngModel" class="form-control" />
+    <div *ngIf="price.invalid" class="error-text">
+      QUE des chiffres
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category-id" class="form-label">Category Id</label>
+    <input required pattern="^\d+(\.\d+)?$" type="number" name="cat" [(ngModel)]="p.categoryId" #cat="ngModel" class="form-control" />
+    <div *ngIf="cat.invalid" class="error-text">obligatoire</div>
+  </div>
+
+  <div class="form-group">
+    <label for="promotion" class="form-label">Promotion</label>
+    <input name="promo" pattern="^(0|[1-9][0-9]?)$" [(ngModel)]="p.promotion" #promo="ngModel" class="form-control" />
+    <div *ngIf="promo.invalid" class="error-text">valeur <=100</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description" class="form-label">Description</label>
+    <textarea required name="description" [(ngModel)]="p.description" #description="ngModel" class="form-control"></textarea>
+    <div *ngIf="description.invalid" class="error-text">Champs obligatoire</div>
+  </div>
+
+  <button [disabled]="f.invalid" type="submit" class="btn btn-primary submit-button" (click)="add(f.value)">Submit</button>
+</form>
+
+<div class="mt-2">
+  <p>Valid: {{n.valid}} ** Invalid: {{n.invalid}}</p>
+  <p>Touched: {{n.touched}} ** Untouched: {{n.untouched}}</p>
+  <p>Dirty: {{n.dirty}} ** Pristine: {{n.pristine}}</p>
+</div>
